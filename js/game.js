@@ -6,22 +6,48 @@
 // this is the Phaser3 configuration file
 
 // These are the class imports
+// This is the splash scene import
 import SplashScene from './scenes/splashScene.js'
+
+// this is the title scene import
 import TitleScene from './scenes/titleScene.js'
+
+// this is the menu scene import
 import MenuScene from './scenes/menuScene.js'
+
+// this is the win scene import
+import WinScene from './scenes/winScene.js'
+
+// this is the end scene import
+import EndScene from './scenes/endScene.js'
+
+// this is the game scene import
 import GameScene from './gameScene.js'
 
-// The mother teresa splash scene
+// These are the exports
+// The mother teresa splash scene export
+// export const splashScene
 const splashScene = new SplashScene()
 
-// The frogger image, with title
+// The frogger image, with title export
+// export const titleScene
 const titleScene = new TitleScene()
 
-// The other frog image, with click prompt
+// The other frog image, with click prompt export
+// export const menuScene
 const menuScene = new MenuScene()
 
-// The main game scnee with the frog, water, roads, cars, etc.
+// The main game scene with the frog, water, roads, cars, etc export.
+// export const gameScene
 const gameScene = new GameScene()
+
+// The win Scene export
+// export const winScene
+const winScene = new WinScene()
+
+// The lose Scene export
+// export const endScene
+const endScene = new EndScene()
 
 //* Game scene */
 const config = {
@@ -31,7 +57,7 @@ const config = {
   physics: {
     default: 'arcade',
     arcade: {
-    debug: true
+    debug: false
     }
 },
   // The background colour
@@ -42,6 +68,9 @@ const config = {
    mode: Phaser.Scale.FIT,
     // we place it in the middle of the page.
     autoCenter: Phaser.Scale.CENTER_BOTH
+  },
+  fps: {
+    target: 60
   }
 }
 
@@ -61,4 +90,11 @@ game.scene.add('menuScene', menuScene)
 // the game scene with frog, cars, water, etc
 game.scene.add('gameScene', gameScene)
 
+// the win scene after winning
+game.scene.add('winScene', winScene)
+
+// the end scene after losing
+game.scene.add('endScene', endScene)
+
+// the start scene, which is the splash scene
 game.scene.start('splashScene')

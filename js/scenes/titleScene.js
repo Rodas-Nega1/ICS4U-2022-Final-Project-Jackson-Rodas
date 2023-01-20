@@ -26,6 +26,7 @@ class TitleScene extends Phaser.Scene {
   }
 
  preload () {
+  
    // title scene is writtin in the console to keep track
    console.log('Title Scene')
 
@@ -35,6 +36,7 @@ class TitleScene extends Phaser.Scene {
  }
 
   create(data) {
+  
     // set scale multiplies the image size by 2.75
     this.splashSceneBackgroundImage = this.add.sprite(0, 0, 'titleSceneBackground').setScale(2.75)
 
@@ -52,6 +54,7 @@ class TitleScene extends Phaser.Scene {
   }
 
   update(time, delta) {
+  
    // program waits 6 seconds before switching scene
    if (time > 6000) {
     this.scene.switch('menuScene')
@@ -59,4 +62,5 @@ class TitleScene extends Phaser.Scene {
   }
 }
 
+// this exports the title scene
 export default TitleScene
